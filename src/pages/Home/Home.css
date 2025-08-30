@@ -44,19 +44,31 @@
 .box p{
     display: none;
 }
-.note{
-    width: 100%;
-    max-width: 700px;
-    height: 50px;
-    border: 1px solid rgba(39, 37, 37, 0.359);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 10px;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 0.5rem;
+.note {
+  width: 100%;
+  max-width: 700px;
+  height: 50px;
+  border: 1px solid rgba(39, 37, 37, 0.359);
+  white-space: nowrap;   
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  word-wrap: break-word;    
+  overflow-wrap: break-word;  
 }
+
+.view{
+    white-space:normal;
+    overflow:visible;
+    text-overflow: normal;
+    height: max-content
+}
+
 .plus{
     height: 30px;
     width: 30px;
@@ -69,6 +81,7 @@
     background-color:rgba(86, 74, 247, 0.813);
     box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.438);
 }
+
 .textarea {
   position: fixed;
   padding: 10px;
@@ -81,6 +94,7 @@
   background: rgba(255, 255, 255, 1);
   z-index: 999;
 }
+
 .textarea textarea {
   background-color: white;
   outline: none;

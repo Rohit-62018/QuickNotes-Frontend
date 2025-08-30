@@ -25,7 +25,6 @@ function Home() {
       if (success) {
         setNotes(user?.notes);
         setName(user?.name);
-        
         setEmail(user?.email)
       } else {
         toast.error(message);

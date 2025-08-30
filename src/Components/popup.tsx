@@ -20,7 +20,7 @@ const Popup: React.FC<PopupProps> = ({ title, message }) => {
 
   return (
     <div className={`popup-container ${show ? "show" : "hide"}`}>
-      <h3>{title}</h3>
+      <h3>Welcome,{title}</h3>
       <p>{message}</p>
     </div>
   );
