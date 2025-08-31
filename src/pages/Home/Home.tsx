@@ -1,4 +1,3 @@
-import "./Home.css";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Header from "../../Components/Header";
@@ -6,6 +5,7 @@ import NoteInput from "../../Components/NoteInput";
 import NoteList from "../../Components/NoteList";
 import { fetchNotes, addNote } from "../../apicalls";
 import Popup from "../../Components/popup";
+import "./Home.css";
 
 interface Note {
   _id: string;

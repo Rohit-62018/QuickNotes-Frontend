@@ -27,6 +27,7 @@
     border: 1px solid rgba(77, 75, 75, 0.573);
     padding: 7px 20px;
     border-radius: 2rem;
+    cursor: pointer;
 }
 .box{
     height: 89%;
@@ -87,6 +88,7 @@
     margin:1.3rem 0 0 1rem;
     background-color:rgba(86, 74, 247, 0.813);
     box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.438);
+    cursor: pointer;
 }
 
 .textarea {
@@ -115,7 +117,7 @@
 
 .popup-container {
   position: fixed;
-  top: -150px; /* start upar se hidden */
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
   background: #2563eb;
@@ -130,13 +132,17 @@
 }
 
 .popup-container.show {
-  top: 40px;  /* visible position */
+  top: 40px;  
   opacity: 1;
 }
 
 .popup-container.hide {
   top: -150px;
   opacity: 0;
+}
+
+.popup-container p{
+  font-size: 20px;
 }
 
 @media (max-width:600px){

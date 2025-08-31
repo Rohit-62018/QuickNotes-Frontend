@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 import "./App.css";
 import Login from "./pages/Login/login";
 import Home from "./pages/Home/Home";
+// import { GoogleLogin, GoogleOAuthProvider, CredentialResponse } from "@react-oauth/google";
+
 
 function App() {
   const navigate = useNavigate();
@@ -25,7 +27,6 @@ function App() {
           navigate("/login");
         }
       } catch (error) {
-        console.error(error);
         navigate("/login");
       }
     };

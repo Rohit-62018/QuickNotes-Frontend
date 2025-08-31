@@ -31,8 +31,6 @@ const Login: React.FC = () => {
             const data = await res.json();
             const { success, message} = data;
             if(success){
-                console.log("mission passed", message)
-                toast.success(message)
                 navigate('/home')
             }else{
                 toast.error(message)
@@ -49,9 +47,10 @@ const Login: React.FC = () => {
             const data = await res.json();
             const { success, message } = data;
             if (success) {
-                console.log("mission passed", message);
                 toast.success(message);
-                navigate('/home');
+                setSignState("Sign In");
+                setEmail("");
+                setPassword("");
             } else {
                 toast.error(message);
             }
