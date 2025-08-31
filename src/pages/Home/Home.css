@@ -144,6 +144,9 @@
 .popup-container p{
   font-size: 20px;
 }
+.google{
+  margin-top: 1rem;
+}
 
 @media (max-width:600px){
    .plus{

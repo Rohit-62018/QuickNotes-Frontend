@@ -3,11 +3,11 @@ import type { FormEvent, ChangeEvent } from "react";
 import netflix_spinner from "../../assets/netflix_spinner.gif";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Google } from "../../Components/withGoogle";
 import "./Login.css";
 
 const Login: React.FC = () => {
   const [signState, setSignState] = useState<"Sign In" | "Sign Up">("Sign In");
-
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -99,6 +99,7 @@ const Login: React.FC = () => {
             value={password}
           />
           <button type="submit">{signState}</button>
+          <Google></Google>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" id="rememberMe" />
