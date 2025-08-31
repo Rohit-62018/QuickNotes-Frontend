@@ -23,3 +23,13 @@ export const logoutUser = async () => {
   });
   return res.json();
 };
+
+export const deleteNote = async (id: string) => {
+  const res = await fetch("http://localhost:3000/notes/delete", {
+    method: "DELETE",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id }),
+  });
+  return res.json();
+};

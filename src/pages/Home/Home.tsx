@@ -59,7 +59,7 @@ function Home() {
           {create && (
             <NoteInput note={note} setNote={setNote} onCreate={handleCreateNote} />
           )}
-          <NoteList notes={notes} dimmed={create} />
+          <NoteList notes={notes} dimmed={create} setNotes={setNotes} />
         </div>
       </div>
     </div>
