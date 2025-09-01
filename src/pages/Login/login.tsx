@@ -30,7 +30,7 @@ const Login: React.FC = () => {
     setLoading(true);
     try {
       if (signState === "Sign In") {
-            const res = await fetch("http://localhost:3000/login", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const Login: React.FC = () => {
                 toast.error(message)
             }
         } else {
-            const res = await fetch("http://localhost:3000/signup", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -104,7 +104,6 @@ const Login: React.FC = () => {
             }
             value={password}
           />
-          {/* <button type="submit">{signState}</button> */}
           <button type="submit" disabled={loading}>
           {loading ? "Sending..." : signState}
         </button>

@@ -1,5 +1,5 @@
 export const fetchNotes = async () => {
-  const res = await fetch("http://localhost:3000/notes", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/notes`, {
     method: "GET",
     credentials: "include",
   });
@@ -7,7 +7,7 @@ export const fetchNotes = async () => {
 };
 
 export const addNote = async (content: string) => {
-  const res = await fetch("http://localhost:3000/addnotes", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/addnotes`, {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +17,7 @@ export const addNote = async (content: string) => {
 };
 
 export const logoutUser = async () => {
-  const res = await fetch("http://localhost:3000/logout", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/logout`, {
     method: "POST",
     credentials: "include",
   });
@@ -25,7 +25,7 @@ export const logoutUser = async () => {
 };
 
 export const deleteNote = async (id: string) => {
-  const res = await fetch("http://localhost:3000/notes/delete", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/notes/delete`, {
     method: "DELETE",
     credentials: "include",
     headers: { "Content-Type": "application/json" },

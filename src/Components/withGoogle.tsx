@@ -10,7 +10,7 @@ export  function Google() {
       onSuccess={(credentialResponse) => {
         const gtoken = credentialResponse.credential; 
 
-        fetch("http://localhost:3000/auth/google", {
+        fetch(`${import.meta.env.VITE_API_URL}/auth/google`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include", 

@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("http://localhost:3000/isAuth", {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/isAuth`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
