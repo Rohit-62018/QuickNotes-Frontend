@@ -1,5 +1,6 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export  function Google() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export  function Google() {
           .catch((err) => console.error("Login error", err));
       }}
       onError={() => {
-        console.log("Login Failed");
+        toast.error("Something went wrong")
       }}
     />
     </div>

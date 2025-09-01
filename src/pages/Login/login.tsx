@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import type { FormEvent, ChangeEvent } from "react";
-import netflix_spinner from "../../assets/netflix_spinner.gif";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Google } from "../../Components/withGoogle";
+import OtpInput from "./OtpInput";
 import "./Login.css";
 
 const Login: React.FC = () => {
@@ -12,10 +12,21 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [viewOtp, setViewOtp] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const user_auth = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if( name && name.trim()==="" ){
+      toast.error(`name is required`);
+      return;
+    }else if( email.trim()===""){
+      toast.error(`email is required`);
+      return;
+    }else if(password.trim()===""){
+      toast.error(`password is required`);
+      return;
+    }
     setLoading(true);
     try {
       if (signState === "Sign In") {
@@ -47,10 +58,9 @@ const Login: React.FC = () => {
             const data = await res.json();
             const { success, message } = data;
             if (success) {
-                toast.success(message);
-                setSignState("Sign In");
-                setEmail("");
+                // setSignState("Sign In");
                 setPassword("");
+                setViewOtp(true);
             } else {
                 toast.error(message);
             }
@@ -63,12 +73,8 @@ const Login: React.FC = () => {
     }
   };
 
-  return loading ? (
-    <div className="loading-spinner">
-      <img src={netflix_spinner} alt="Loading..." />
-    </div>
-  ) : (
-    <div className="login">
+  return (
+    viewOtp?<OtpInput email={email} />:<div className="login">
       <div className="login-form">
         <h1>{signState}</h1>
         <form onSubmit={user_auth}>
@@ -98,7 +104,10 @@ const Login: React.FC = () => {
             }
             value={password}
           />
-          <button type="submit">{signState}</button>
+          {/* <button type="submit">{signState}</button> */}
+          <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : signState}
+        </button>
           <Google></Google>
           <div className="form-help">
             <div className="remember">
